@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classes - 2</title>
+</head>
+<body>
+    
+    <script>
+        class book{
+            constructor(name, author, publisher, genre){
+                this.name = name,
+                this.author = author,
+                this.publisher = publisher,
+                this.genre = genre
+            }
+
+            getName(){
+                return this.name;
+            }
+
+            getAuthor(){
+                return this.author;
+            }
+
+            getPublisher(){
+                return this.publisher;
+            }
+
+            getGenre(){
+                return this.genre;
+            }
+
+            getAllDataBook(){
+                return [this.name, this.author, this.publisher, this.genre];
+            }
+        }
+
+        var theShinning = new book('The Shinning', 'Stephen King', 'Suma das Letras', 'Horror');
+        console.log(theShinning.getName());
+        console.log(theShinning.getAuthor());
+        console.log(theShinning.getPublisher());
+        console.log(theShinning.getGenre());
+
+        console.log('--------------------------------------');
+        
+        console.log(theShinning.getAllDataBook()[0]);
+        console.log(theShinning.getAllDataBook()[1]);
+        console.log(theShinning.getAllDataBook()[2]);
+        console.log(theShinning.getAllDataBook()[3]);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classes - 1</title>
+</head>
+<body>
+
+    <script>
+        class Person{
+            constructor(name, age){
+                this.name = name,
+                this.age = age    
+            }
+
+            getData(){
+                return [this.name, this.age];
+            }
+        }
+
+        class Employee extends Person{
+            constructor(name, age, salary){
+                super(name, age)
+                this.salary = salary;
+            }
+            
+            getSalary(){
+                return this.salary;
+            }
+        }
+
+        var person = new Person('Jonathan', 31);
+        console.log('name: ', person.getData()[0]);
+        console.log('age: ', person.getData()[1]);
+
+        var employee = new Employee('Jonathan', 31, 2500)
+        console.log('name: ', employee.getData()[0]);
+        console.log('age: ', employee.getData()[1]);
+        console.log('salary: ', employee.getSalary());
+    </script>
+</body>
+</html>

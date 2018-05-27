@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classes - 3</title>
+</head>
+<body>
+    
+    <script>
+        class games{
+          constructor(name, company, releaseYear){
+            this.name = name,
+            this.company = company,
+            this.releaseYear = releaseYear
+          }
+
+          getData(){
+            return [
+              this.name,
+              this.company,
+              this.releaseYear
+            ]
+          }
+        }
+
+
+        var splinterCell = new games('Splinter Cell', 'Ubisoft', 2018);
+        
+        console.log(
+          'Name: ' + splinterCell.getData()[0] + ', ' +
+          'Company: ' + splinterCell.getData()[1] + ', ' +
+          'Release Year: ' + splinterCell.getData()[2]
+        );
+
+        class NintendoGame extends games{
+          constructor(name, company, releaseYear, plataform, exclusive){
+            super(name, company, releaseYear)
+            this.plataform = plataform,
+            this.exclusive = exclusive
+          }
+
+          getNintendoData(){
+            return [
+              this.plataform,
+              this.exclusive
+            ]
+          }
+        }
+
+        class PLaystationGame extends games{
+          
+        }
+
+        var marioBrothers = new NintendoGame('Mario Brothers', 'Nintendo', 2017, 'Nintendo Switch', true);
+
+        console.log(
+          'Name: ' + marioBrothers.getData()[0] + ', ' +
+          'Company: ' + marioBrothers.getData()[1] + ', ' +
+          'Release Year: ' + marioBrothers.getData()[2] + ', ' +
+          'Plataform: ' + marioBrothers.getNintendoData()[0] + ', ' +
+          'Exclusive: ' + marioBrothers.getNintendoData()[1]
+        );
+        
+    </script>
+</body>
+</html>
