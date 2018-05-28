@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classes - 5</title>
+</head>
+<body>
+    
+    <script>
+    // Runtime methods
+    var res = 'callAnyClass';
+
+      class anyClass{
+        constructor(){}
+
+        [res](){
+          console.log('any class called!!"');
+        }
+
+        ['other' + 'Class'](){
+          console.log('other class called!!"');
+        }
+      }
+
+      var x = new anyClass();
+      var y = new anyClass();
+      console.log(x.callAnyClass());
+      console.log(y.otherClass());
+        
+    </script>
+</body>
+</html>

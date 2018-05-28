@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iterators - 2</title>
+</head>
+<body>
+    
+    <script>
+        // Yield
+        var myList = {};
+        myList[Symbol.iterator] = function* (){
+          yield 'A'; // {value = A, done: false}
+          yield 'B'; // {value = B, done: false}
+          yield 'C'; // {value = C, done: false}
+        }
+
+        for(item of myList){
+          console.log(item);
+        }
+
+    </script>
+</body>
+</html>

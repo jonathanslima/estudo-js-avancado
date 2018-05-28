@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iterators - 1</title>
+</head>
+<body>
+    
+    <script>
+        // Yield
+        function* gen(){
+          yield 'A'; // {value = A, done: false}
+          yield 'B'; // {value = B, done: false}
+          yield 'C'; // {value = C, done: false}
+        }
+
+        let g = gen();
+
+        console.log(`value: ${g.next().value}`); // A
+        console.log(`value: ${g.next().value}`); // B
+        console.log(`value: ${g.next().value}`); // C
+        console.log(`value: ${g.next().value}`); // undefined
+
+    </script>
+</body>
+</html>
