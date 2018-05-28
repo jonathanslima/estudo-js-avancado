@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classes - 4</title>
+</head>
+<body>
+    
+    <script>
+        class player{
+          constructor(name){
+            this.name = name;
+          }
+
+          // getter
+          getName(){
+            return this.name;
+          }
+
+          // setter
+          setName(name){
+            this.name = name;
+          }
+        }
+
+        var realMadriPlayer = new player('Cristiano Ronaldo');
+        console.log(realMadriPlayer.getName());
+        
+        realMadriPlayer.setName('Marcelo');
+        console.log(realMadriPlayer.getName());
+        
+    </script>
+</body>
+</html>
