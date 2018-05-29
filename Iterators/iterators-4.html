@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iterators - 4</title>
+</head>
+<body>
+    
+    <script>
+        // Fibonnaci with a iterator
+        function* fibonacci(){
+            var a = 0;
+            var b = 1;
+            var current;
+            
+            while(true){
+                current = a; // 1
+                
+                yield current;
+                
+                a = b; // 2
+                b = current + b; // 1 + 1
+            }
+        }
+        
+        const seq = fibonacci();
+        
+        for (let i = 0; i < 20; i++){
+          console.log(seq.next().value);
+        }
+    </script>
+</body>
+</html>
