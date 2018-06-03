@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classes - 1</title>
+</head>
+<body>
+
+    <script>
+      class Band{
+          constructor(band, genre, country){
+              this.band = band,
+              this.genre = genre,
+              this.country = country
+          }
+
+          getBand(){
+              return this.band;
+          }
+
+          getGenre(){
+              return this.genre;
+          }
+
+          getCountry(){
+              return this.country;
+          }
+      }
+
+      class Member extends Band{
+        constructor(band, genre, country, name, instrument){
+          super(band, genre, country);
+          this.name = name,
+          this.instrument = instrument
+        }
+
+        getName(){
+          return this.name
+        }
+        
+        getInstrument(){
+          return this.instrument
+        }
+      }
+
+      let fred = new Member('Queen', 'Rock', 'Zanzibar', 'Freddy Mercury', 'Teclado');
+      let renato = new Member('Legião Urbana', 'Rock Nacional', 'Brasil', 'Renato Russo', 'Violão, Teclado e Contrabaixo');
+
+      console.log(`O músico ${fred.getName()}, nascido no ${fred.getCountry()}, foi um dos integrantes da banda de ${fred.getGenre()}, ${fred.getBand()}, onde além de cantar, tocava ${fred.getInstrument()}`);
+
+      console.log(`O músico ${renato.getName()}, nascido no ${renato.getCountry()}, foi um dos integrantes da banda de ${renato.getGenre()}, ${renato.getBand()}, onde além de cantar, tocava ${renato.getInstrument()}`);      
+    </script>
+</body>
+</html>
