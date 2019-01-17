@@ -5,21 +5,22 @@ class Negociacao{
 		this._data = date;
 		this._quantidade = qtd;
 		this._valor = val;
+		Object.freeze(this);
 	}
 
-	getVolume(){
+	get volume(){
 		return this._quantidade * this._valor;
 	}
 
-	getData(){
+	get data(){
 		return this._data;
 	}
 
-	getValor(){
+	get valor(){
 		return this._valor;
 	}
 
-	getQuantidade(){
+	get quantidade(){
 		return this._quantidade;
 	}
 }

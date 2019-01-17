@@ -61,10 +61,15 @@
     <script src="js/app/models/Negociacao.js"></script>
     <script>
         var n = new Negociacao(new Date(), 20, 4);
-        console.log('getVolume: ', n.getVolume());
-        console.log('getValor: ', n.getValor());
-        console.log('getData: ', n.getData());
-        console.log('getQuantidade: ', n.getQuantidade());
+        n.quantidade = 5;
+
+        console.log('n.quantidade: ', n.quantidade = 5)
+        console.log('n.quantidade: ', n.quantidade)
+
+        console.log('volume: ', n.volume);
+        console.log('valor: ', n.valor);
+        console.log('data: ', n.data);
+        console.log('quantidade: ', n.quantidade);
     </script>
 </body>
 </html>
