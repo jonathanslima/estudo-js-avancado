@@ -1,8 +1,8 @@
 class Negociacao{
 
-	constructor(date, qtd, val){
+	constructor(data, qtd, val){
 		/* Deixando com a convenção de só leitura */
-		this._data = date;
+		this._data = new Date(data.getTime());
 		this._quantidade = qtd;
 		this._valor = val;
 		Object.freeze(this);
