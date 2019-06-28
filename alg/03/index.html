@@ -11,7 +11,17 @@
   <p>Ver console</p>
 
   <script>
-		
+		function reverseNumber(num){
+			let number = String(num);
+			let res = '';
+
+			for(let n of number){
+				res = n + res;
+				console.log(res)
+			}
+		}
+
+		reverseNumber(39990) // Print 09993
   </script>
 </body>
 </html>
