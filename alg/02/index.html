@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Palindrome</title>
+</head>
+<body>
+  <h1>02. Palindrome</h1>
+
+  <script>
+    let isPalindrome = (text)=> {
+      let textComplete = text.toLowerCase();
+      let textReversed = text.split('').reverse().join('').toLowerCase();
+
+      if(textComplete.replace(/[' ', '-']/gi, '') === textReversed.replace(/[' ', '-']/gi, '')){
+        console.log(true);
+        return;
+      }
+
+      console.log(false);
+    }
+
+    isPalindrome('Socorram me subi no onibus em Marrocos')
+  </script>
+</body>
+</html>
