@@ -14,7 +14,7 @@
       let textComplete = text.toLowerCase();
       let textReversed = text.split('').reverse().join('').toLowerCase();
 
-      if(textComplete.replace(/[' ', '-']/gi, '') === textReversed.replace(/[' ', '-']/gi, '')){
+      if(textComplete.replace(/[' ', -]/gi, '') === textReversed.replace(/[' ', '-']/gi, '')){
         console.log(true);
         return;
       }
