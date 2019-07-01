@@ -11,21 +11,64 @@
   <p>Ver console</p>
 
   <script>
-    let input1 = "lorem ipsum";
-    let input2 = "ipsum lorem";
     let removeEspacos = function(inp){
       return inp.replace(/\s/gi, '')
+    };
+
+    let input1 = removeEspacos('vida louca vida, vida breve').split(''),
+        input2 = removeEspacos('louca vida vida, breve vida').split(''),
+        mapInput1 = {}, mapInput2 = {}, arrInput1 = [], arrInput2 = [], count = 0;
+
+    let mapInputs = (input, obj)=> {
+      for(letra in input){
+        obj[input[letra]] = obj[input[letra]] ? obj[input[letra]] + 1 : 1;
+      }
+    };
+
+    let transformaEmArray = (arrInput, mapInput)=> {
+      for (var letra in mapInput) {
+        arrInput.push([letra, mapInput[letra]]);
+      }
+    };
+
+    let ordenaArrays = (arrInput)=> {
+      arrInput.sort((a, b)=> {
+        return b[1] - a[1]
+      });
     }
 
     let anagrams = (input1, input2)=> {
 
-      if(removeEspacos(input1).length !== removeEspacos(input2).length){
-        return console.log(true)
+      if(input1.length !== input2.length){
+        return console.log('As frases não são um anagrama')
       }
 
-      return console.log(false)
+      // Cria o mapa das strings
+      mapInputs(input1, mapInput1);
+      mapInputs(input2, mapInput2);
+
+      // Transforma em Array
+      transformaEmArray(arrInput1, mapInput1);
+      transformaEmArray(arrInput2, mapInput2);
+
+      // Ordena
+      ordenaArrays(arrInput1);
+      ordenaArrays(arrInput2);
+
+      // console.log(arrInput1, arrInput2)
+      arrInput1.map((objItem, index)=> {
+        for(let i in arrInput2){
+          if(objItem[0] == arrInput2[i][0] && objItem[1] == arrInput2[i][1]){
+            count++;
+          }
+        }
+      })
+
+      if(count === 12) return console.log('As duas frases/ palavras consistem em um anagrama');
+      return console.log('As frases não são um anagrama');
     };
 
+    // Compara anagrama
     anagrams(input1, input2);
   </script>
 </body>
