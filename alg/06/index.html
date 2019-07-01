@@ -15,8 +15,8 @@
       return inp.replace(/\s/gi, '')
     };
 
-    let input1 = removeEspacos('vida louca vida, vida breve').split(''),
-        input2 = removeEspacos('louca vida vida, breve vida').split(''),
+    let input1 = removeEspacos('vida louca vida, vida breve já que eu não posso').split(''),
+        input2 = removeEspacos('louca vida vida, breve vida já posso eu que não').split(''),
         mapInput1 = {}, mapInput2 = {}, arrInput1 = [], arrInput2 = [], count = 0;
 
     let mapInputs = (input, obj)=> {
@@ -64,7 +64,7 @@
         }
       })
 
-      if(count === 12) return console.log('As duas frases/ palavras consistem em um anagrama');
+      if(count === arrInput1.length) return console.log('As duas frases/ palavras consistem em um anagrama');
       return console.log('As frases não são um anagrama');
     };
 
