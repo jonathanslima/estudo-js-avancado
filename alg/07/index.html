@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vowels</title>
+</head>
+<body>
+	<h1>7. Vowels</h1>
+	<p>Ver console:</p>
+
+	<script>
+		let palavraFrase = 'JONATHAN';
+		let reg = /[a,e,i,o,u]/gi;
+		let count = 0;
+
+		let strArr = palavraFrase.split('');
+		
+		let quantidadeVogais = (str)=> {
+			str.map((letra)=> { if(reg.test(letra)) count++ })
+			
+			return console.log(`A palavra/frase ${palavraFrase}${count === 0 ? ' não' : ''} possui${count > 0 ? ' ' + count : ''}` + (count > 1 ? ' vogais' : ' vogal'));
+		};
+
+		quantidadeVogais(strArr)
+	</script>
+</body>
+</html>
