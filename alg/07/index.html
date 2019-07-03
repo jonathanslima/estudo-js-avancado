@@ -11,16 +11,29 @@
 	<p>Ver console:</p>
 
 	<script>
-		let palavraFrase = 'JONATHAN';
-		let reg = /[a,e,i,o,u]/gi;
+		let palavraFrase = 'mario';
+		let reg = /[aeiou]/gi;
 		let count = 0;
+		let response = {
+			semVogal: `A palavra/ frase não possui vogais.`,
+			umaVogal: `A palavra frase possui apenas uma vogal.`,
+			maisVogais: (palavra, qtd)=> {
+				return console.log(`A palavra/frase ${palavra} possui ${qtd} vogais`);
+			}
+		};
 
 		let strArr = palavraFrase.split('');
 		
 		let quantidadeVogais = (str)=> {
-			str.map((letra)=> { if(reg.test(letra)) count++ })
-			
-			return console.log(`A palavra/frase ${palavraFrase}${count === 0 ? ' não' : ''} possui${count > 0 ? ' ' + count : ''}` + (count > 1 ? ' vogais' : ' vogal'));
+			str.map((letra)=> {
+				if(letra.match(reg)) {
+					count++
+				} 
+			})
+
+			if(count == 0) return console.log(response.semVogal);
+			if(count <= 1) return console.log(response.umaVogal);
+			if(count > 1) return console.log(response.maisVogais(palavraFrase, count));
 		};
 
 		quantidadeVogais(strArr)
