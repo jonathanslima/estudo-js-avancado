@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Reverse Array</title>
+</head>
+<body>
+	<h1>9. Reverse Array</h1>
+	<p>Ver console</p>
+
+	<script>
+		// Array a ser invertido
+		let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+		// Solução 1
+		console.log('*** solucao 1 ***********************')
+		const reverseArray1 = (arr)=> {
+			arr = arr.reverse();
+			return arr;
+		}
+
+		console.log(reverseArray1(arr))
+
+		console.log('')
+		console.log('*** solucao 2 ***********************')
+
+		// reset arr
+		arr = arr.reverse();
+	
+		const reverseArray2 = (arr)=> {
+
+			for(let i = 0; i < arr.length / 2; i++){
+				// guarda temporariamente as posicoes iniciais do array
+				let itemp = arr[i];
+				// troca a primeira posicao pela ultima
+				// a cada loop vai pegando a 2ª, 3ª posicao e por assim diante ate chegar na metade do arr
+				arr[i] = arr[arr.length - 1 - i];
+				// troca a ultima posicao pela primeira
+				// a cada loop vai pegando a 8ª, 7ª posica e assim por diante
+				arr[arr.length - 1 - i] = itemp;
+			}
+
+			return console.log(arr)
+		}
+
+		reverseArray2(arr)
+
+		console.log('')
+		console.log('*** solucao 3 ***********************')
+
+		arr = arr.reverse();
+
+		const reverseArray3 = (arr)=>{
+			for(let i = 0; i < arr.length / 2; i++ ){
+				let itemp = arr[i];
+				[arr[i]] = [arr[arr.length - 1 - i]];
+				[arr[arr.length - 1 - i]] = [itemp];
+			}
+			return console.log(arr);
+		}
+
+		reverseArray3(arr);
+	</script>
+</body>
+</html>

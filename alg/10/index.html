@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Reverse Words</title>
+</head>
+<body>
+	<h1>10. Reverse Words</h1>
+	<p>Ver console</p>
+
+	<script>
+		var frase = 'Vim a Comala porque me disseram que aqui vivia meu pai, um tal de Pedro Páramo, minha mãe que me disse.',  
+				fraseInvertida = [],
+				texto;
+
+		var reverseFrase = frase => {
+				texto = frase.split(' ');
+
+			for(palavra in texto){
+				fraseInvertida.push((texto[palavra].split('').reverse().join('')) + ' ');
+			}
+
+			return fraseInvertida.join('');
+		}
+
+		console.log(reverseFrase(frase));
+	</script>
+</body>
+</html>
