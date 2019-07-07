@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Capitalization</title>
+</head>
+<body>
+	<h1>11. Capitalization</h1>
+	<p>Ver console</p>
+	<script>
+		let frase = '"Fly away, skyline pigeon fly. Towards the dreams you\'ve left so very far behind" \n Elton John';
+		let fraseFatiada = frase.split('');
+		let fraseCapitalizada = [];
+		let reg = /[\s, '!', '.',?|,]/gi;
+		let charAnteriorNaoLetra = (ch, p)=>{
+			let condicao = ch[p - 1];
+			if(condicao) return condicao.match(reg)	? true : false
+		};
+		let capitalizacao = fraseFatiada => {
+			for(let i = 0; i < fraseFatiada.length; i++){
+				if(charAnteriorNaoLetra(fraseFatiada, i)){
+					fraseCapitalizada.push(fraseFatiada[i].toUpperCase())
+				}else{
+					fraseCapitalizada.push(fraseFatiada[i])					
+				}
+			};
+			return console.log(fraseCapitalizada.join(''));
+		}
+
+		capitalizacao(frase);
+	</script>
+</body>
+</html>
