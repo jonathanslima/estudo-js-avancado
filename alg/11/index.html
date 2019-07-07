@@ -11,23 +11,25 @@
 	<p>Ver console</p>
 	<script>
 		let frase = '"Fly away, skyline pigeon fly. Towards the dreams you\'ve left so very far behind" \n Elton John';
-		let fraseFatiada = frase.split('');
+		let letraSeparada = frase.split('');
 		let fraseCapitalizada = [];
 		let reg = /[\s, '!', '.',?|,]/gi;
-		let charAnteriorNaoLetra = (ch, p)=>{
-			let condicao = ch[p - 1];
+
+		let charAnteriorNaoLetra = (letra, pos)=>{
+			let condicao = letra[--pos];
 			if(condicao) return condicao.match(reg)	? true : false
 		};
-		let capitalizacao = fraseFatiada => {
-			for(let i = 0; i < fraseFatiada.length; i++){
-				if(charAnteriorNaoLetra(fraseFatiada, i)){
-					fraseCapitalizada.push(fraseFatiada[i].toUpperCase())
+
+		let capitalizacao = letraSeparada => {
+			for(let i = 0; i < letraSeparada.length; i++){
+				if(charAnteriorNaoLetra(letraSeparada, i)){
+					fraseCapitalizada.push(letraSeparada[i].toUpperCase())
 				}else{
-					fraseCapitalizada.push(fraseFatiada[i])					
+					fraseCapitalizada.push(letraSeparada[i])					
 				}
 			};
 			return console.log(fraseCapitalizada.join(''));
-		}
+		};
 
 		capitalizacao(frase);
 	</script>
