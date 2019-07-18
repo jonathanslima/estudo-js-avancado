@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Caesar Cipher</title>
+  </head>
+  <body>
+    <h1>Caesar Cipher</h1>
+    <p>Ver console</p>
+
+    <script>
+      // caesarCipher("I love JavaScript!", 100), "E hkra FwrwOynelp!"
+      let alfabeto = "abcdefghijklmnopqrstuvwxyz".split(""),
+        frase = "I love JavaScript!",
+        reg = /[ ,!,?,.]/gi,
+				checkUpp = /A-Z/g;
+        fraseCriptografada = [];
+
+      let criptografia = (frase, val, pos) => {
+        let letra = frase.split("");
+        let valor = val;
+
+        if (valor === 0) {
+          return frase;
+        }
+
+				for (let i = 0; i < letra.length; i++) {
+					alfabeto.some((item, index)=> {
+						if(letra[i].match(reg)){
+							return fraseCriptografada.push(letra[i]);
+						}
+						
+						if(item == letra[i].toLowerCase()){
+							// console.log(item, index)
+							let atual = index + 1;
+							let limite = val;
+							let total = alfabeto.length;
+
+							while(limite > total){
+								limite = limite - total
+							}
+
+							let falta = total - atual;
+							let loop = limite - falta - 1;
+							loop = loop >= -1 ? loop : atual + limite - 1;
+
+							let adicionarLetra = letra[i] == letra[i].toUpperCase() ? 
+									alfabeto[loop].toUpperCase() : 
+									alfabeto[loop];
+							return fraseCriptografada.push(adicionarLetra)
+						}
+					})
+				}
+				console.log(fraseCriptografada.join(''))
+      };
+
+      criptografia(frase, 100);
+    </script>
+  </body>
+</html>
