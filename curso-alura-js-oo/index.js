@@ -22,3 +22,4 @@ contaCorrenteRicardo.transferir(150, contaCorrenteAlice);
 
 console.log('Conta Corrente Ricardo = ', contaCorrenteRicardo)
 console.log('Conta Corrente Alice = ', contaCorrenteAlice)
+console.log('Saldo Corrente Alice = ', contaCorrenteAlice.saldo)
