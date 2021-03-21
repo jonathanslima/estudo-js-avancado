@@ -4,6 +4,7 @@ export class ContaCorrente{
     /* public */
     agencia;
     _cliente;
+    static qtdContasAbertas = 0;
 
     /* private */
     _saldo = 0;
@@ -38,5 +39,11 @@ export class ContaCorrente{
     transferir(valor, conta){
         const valorSacado = this.sacar(valor);
         conta.depositar(valorSacado)
+    }
+
+    constructor(agencia, cliente){
+        this.agencia = agencia;
+        this.cliente = cliente;
+        ContaCorrente.qtdContasAbertas += 1;
     }
 }
