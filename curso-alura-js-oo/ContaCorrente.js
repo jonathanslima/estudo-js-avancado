@@ -1,4 +1,3 @@
-import { Cliente } from './Cliente.js';
 import { Conta } from './Conta.js';
 
 export class ContaCorrente extends Conta{
@@ -7,4 +6,9 @@ export class ContaCorrente extends Conta{
         ContaCorrente.qtdContasAbertas += 1;
     }
     static qtdContasAbertas = 0;
+    
+    sacar(valor){
+        let taxa = 1.1;
+        return super.sacar(valor, taxa)
+    }
 }
