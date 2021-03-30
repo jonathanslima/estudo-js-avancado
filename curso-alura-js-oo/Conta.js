@@ -2,6 +2,10 @@ import { Cliente } from './Cliente.js';
 
 export class Conta{
     constructor(saldoInicial, cliente, agencia){
+        if(this.constructor == Conta){
+            throw new Error('Não é possível criar uma conta do tipo conta');
+        }
+
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
@@ -21,8 +25,8 @@ export class Conta{
         return this._saldo;
     }
 
-    sacar(valor, taxa = 1){
-        return this._sacar(valor, taxa)
+    sacar(){
+        throw new Error('Não é possível usar esse método diretamente. É um método abstrato, necessário sobrescrita.')
     }
 
     _sacar(valor, taxa){

@@ -7,8 +7,7 @@ export class ContaCorrente extends Conta{
     }
     static qtdContasAbertas = 0;
     
-    sacar(valor){
-        let taxa = 1.1;
-        return super.sacar(valor, taxa)
+    sacar(valor, taxa = 1.1){
+        return super._sacar(valor, taxa)
     }
 }

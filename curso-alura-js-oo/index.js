@@ -1,4 +1,5 @@
 import { Cliente } from './Cliente.js';
+import { Conta } from './Conta.js';
 import { ContaCorrente } from './ContaCorrente.js';
 import { ContaPoupanca } from './ContaPoupanca.js';
 
@@ -12,3 +13,7 @@ ContaPoupancaAlice.sacar(10);
 
 console.log('Conta Corrente Alice = ', contaCorrenteAlice)
 console.log('Conta Poupança Alice = ', ContaPoupancaAlice)
+
+// Vai dar erro abaixo
+// const contaAlice = new Conta(0, cliente1, 2015);
+// console.log('Conta Alice = ', contaAlice)
