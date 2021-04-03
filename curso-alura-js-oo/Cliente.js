@@ -9,7 +9,7 @@ export class Cliente {
         return this._cpf;
     }
 
-    autenticar(senha){
-        return this._senha == senha;
-    }
+    // autenticar(senha){
+    //     return this._senha == senha;
+    // }
 }
